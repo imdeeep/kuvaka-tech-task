@@ -11,8 +11,7 @@ function calculateRuleScore(lead, offer) {
   }
 
   // Rule 2: Industry match (max 20)
-  // This is a simple example. A real one might be more complex.
-  const idealIndustry = offer.ideal_use_cases[0] || ''; // e.g., "B2B SaaS mid-market"
+  const idealIndustry = offer.ideal_use_cases[0] || '' // e.g., "B2B SaaS mid-market"
   if (lead.industry.toLowerCase().includes('saas')) { // Assuming ICP is SaaS
     score += 20;
   } else if (lead.industry.toLowerCase().includes('tech')) { // Adjacent
