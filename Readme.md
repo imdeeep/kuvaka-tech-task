@@ -5,6 +5,17 @@ This project is a backend service designed for a hiring assignment from Kuvaka T
 
 The application is built with **Node.js**, **Express.js**, and is containerized using **Docker**.
 
+-----
+
+### 🎥 Video Demonstration
+
+A complete walkthrough of the project setup, API usage, and a demonstration of all features (including the bonus CSV export and Docker setup) is available in the video below:
+
+[](https://www.loom.com/share/a70e1c69908348af80a5269178d63599?sid=8b005f8e-1f62-4758-a1e9-57653b8cdfd9)
+
+**[Click here to watch the Project Demo on Loom](https://www.loom.com/share/a70e1c69908348af80a5269178d63599?sid=8b005f8e-1f62-4758-a1e9-57653b8cdfd9)**
+
+
 ## Features
 
   - **RESTful API:** Clean, well-documented endpoints for submitting product offers and lead data.
