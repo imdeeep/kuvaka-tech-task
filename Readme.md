@@ -1,8 +1,3 @@
-Of course. A great `README.md` is the final, crucial step to showcase your work professionally. Based on your code and the assignment requirements, here is a complete `README.md` file.
-
-You can copy and paste this entire block of text directly into the `README.md` file in your project's root directory.
-
------
 
 # Lead Scoring Engine - Kuvaka Tech Assignment
 
@@ -51,10 +46,17 @@ The project follows a standard Node.js service architecture, separating concerns
 
 ## Deployed URL
 
-The service is deployed on Render and is accessible at the following base URL:
+The service is deployed on **Render** and is accessible at the following base URL:
 **`https://kuvaka-tech-task.onrender.com/`**
 
+> **Important Note on "Cold Starts"**
+>
+> This backend is hosted on Render's free tier. To conserve resources, the service will "spin down" after a period of inactivity.
+>
+> The **first request** you send may take **30-60 seconds** to respond as the server wakes up. This is known as a "cold start". Please be patient with the initial request. All subsequent requests will be fast.
+
 -----
+
 
 ## Setup and Installation
 
@@ -292,8 +294,6 @@ This layer uses the Google Gemini model to provide a more nuanced analysis of th
 > Format your response as a JSON object with two keys: "intent" and "reasoning".
 > Example: {"intent": "High", "reasoning": "Fits ICP SaaS mid-market and role is a decision maker."}
 >
-> ```
-> ```
 
   * **AI Score Mapping:** The AI's classification is mapped to points as follows:
       * **High** = 50 points
@@ -301,6 +301,3 @@ This layer uses the Google Gemini model to provide a more nuanced analysis of th
       * **Low** = 10 points
 
 The `Final Score` is the sum of the `Rule-Based Score` and the `AI Score`.
-
-```
-```
