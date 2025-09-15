@@ -1,4 +1,3 @@
-// src/services/scoring.service.js
 function calculateRuleScore(lead, offer) {
   let score = 0;
 

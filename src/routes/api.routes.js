@@ -12,5 +12,7 @@ router.post('/score', controller.scoreLeads);
 
 // Output API
 router.get('/results', controller.getResults);
+router.get('/results/export', controller.exportResults);
+
 
 module.exports = router;

@@ -4,6 +4,7 @@ const csv = require('csv-parser');
 const { Readable } = require('stream');
 const aiService = require('../services/ai.service');
 const scoringService = require('../services/scoring.service');
+const { Parser } = require('json2csv')
 
 // Define paths to our temporary data files
 const OFFER_PATH = path.join(__dirname, '..', 'data', 'offer.json');
@@ -91,9 +92,37 @@ async function getResults(req, res) {
   }
 }
 
+// GET /results/export
+async function exportResults(req, res) {
+  try {
+    // 1. Read the JSON results file
+    const resultsJson = JSON.parse(await fs.readFile(RESULTS_PATH, 'utf8'));
+
+    // 2. Define the columns for the CSV
+    const fields = ['name', 'role', 'company', 'intent', 'score', 'reasoning'];
+    const opts = { fields };
+
+    // 3. Convert JSON to CSV
+    const parser = new Parser(opts);
+    const csv = parser.parse(resultsJson);
+
+    // 4. Set headers to trigger a file download in the browser
+    res.header('Content-Type', 'text/csv');
+    res.attachment('results.csv');
+
+    // 5. Send the CSV data as the response
+    res.status(200).send(csv);
+
+  } catch (error) {
+    res.status(404).send({ message: 'Results not found. Run the scoring process first.', error: error.message });
+  }
+}
+
+
 module.exports = {
   saveOffer,
   uploadLeads,
   scoreLeads,
   getResults,
+  exportResults
 };
