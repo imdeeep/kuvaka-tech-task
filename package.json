@@ -1,0 +1,11 @@
+{
+  "name": "kuvaka-backend",
+  "version": "1.0.0",
+  "description": "Backend Internship task ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mandeep yadav",
+  "license": "ISC"
+}
