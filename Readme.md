@@ -110,27 +110,25 @@ The service is deployed on **Render** and is accessible at the following base UR
 ### 2\. Running with Docker (Bonus)
 
 **Prerequisites:**
-
-  * Docker Desktop
+* Docker and Docker Compose (Docker Desktop includes both).
 
 **Instructions:**
 
-1.  **Create a `.env` file** as described in the local setup section.
-
-2.  **Build the Docker image:**
-
-    ```bash
-    docker build -t kuvaka-task-app .
+1.  **Create a `.env` file** in the root directory and add your Gemini API key:
+    ```
+    GEMINI_API_KEY="your_google_ai_studio_api_key_here"
     ```
 
-3.  **Run the Docker container:**
-
+2.  **Start the application** using Docker Compose. This single command will build the image and start the container in the background.
     ```bash
-    docker run -p 3000:3000 -d --name kuvaka-task-container --env-file .env kuvaka-task-app
+    docker-compose up -d --build
     ```
-
     The server will be available at `http://localhost:3000`.
 
+3.  **To stop the application**, simply run:
+    ```bash
+    docker-compose down
+    ```
 -----
 
 ## API Endpoints & Usage
